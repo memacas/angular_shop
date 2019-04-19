@@ -1,0 +1,11 @@
+{
+  "name": "angular_shop",
+  "version": "1.0.0",
+  "description": "\"# angular_shop\"  git init git add README.md git commit -m \"first commit\" git remote add origin https://github.com/memacas/angular_shop.git git push -u origin master",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
