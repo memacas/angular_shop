@@ -1,0 +1,56 @@
+<div class="principal">
+  <div class="dataContainer">
+    <div class="showcaseDataContainer">
+          <app-navbar></app-navbar>
+      <div class="mainShowcaseContainer">
+        <div class="showcaseContainer">
+          <div class="row">
+            <div class="col-lg-8">
+              <h1>Catálogo de productos</h1>
+            </div>
+            <div class="col-lg-3">
+              <form>
+                <div class="form-group">
+                  <label for="buscar">Qué estás buscando?</label>
+                  <div>
+                    <input class="form-control" type="text" name="buscar" formControlName="buscar" />
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+          <div class="row overflow-auto lista-productos" style="margin-top:20px">
+            <div class="col-lg-3">
+              <div class="thumbnail">
+                <img src="../../../assets/images/aguacate.jpg" alt="Lights" style="width:100%">
+                <div class="caption">
+                  <h4>AGUACATE</h4>
+                  <br>
+                  <strong>Precio: </strong>$5
+                  <br />
+                  <strong>Unidades disponibles: </strong>10
+                  <br />
+                </div>
+                <div class="row">
+                  <div class="col-lg-5">
+                    <button type="button" name="button" class="btn btn-info">Ver más</button>
+                  </div>
+                  <div class="col-lg-7">
+                    <button type="button" name="button" class="btn btn-warning">Añadir</button>
+                    <select class="form-control" id="sel1" style="width:auto; display: inline">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

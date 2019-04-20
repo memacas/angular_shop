@@ -1,23 +1,24 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './components/login/login.component';
-import { ShopComponent } from './components/shop/shop.component';
-import { ShoppingCartComponent } from './components/shop/shopping-cart/shopping-cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ShowcaseComponent } from './components/showcase/showcase.component';
+
 //import { AuthGuard } from './guards/auth.guard';
 //import { NotAuthGuard } from './guards/notAuth.guard';
 
 const appRoutes = [
   { path: '',
-    component: ShopComponent
+    component: ShowcaseComponent
   },
   { path: 'login',
     component: LoginComponent
   },
-  { path: 'shop',
-    component: ShopComponent
+  { path: 'showcase',
+    component: ShowcaseComponent
   },
   { path: 'checkout',
-    component: ShoppingCartComponent
+    component: CheckoutComponent
   },
   /*
   { path: 'dashboard',
@@ -30,7 +31,7 @@ const appRoutes = [
   },
   */
   { path: '**',
-  component: ShopComponent
+  component: ShowcaseComponent
   } // Carga el componente y deja la url tal cual, * Recirecciona al componente cambiando la URL
 ]
 

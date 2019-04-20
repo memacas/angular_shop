@@ -7,17 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { LoginComponent } from './components/login/login.component';
-import { ShopComponent } from './components/shop/shop.component';
-import { NavbarComponent } from './components/shop/navbar/navbar.component';
-import { ShoppingCartComponent } from './components/shop/shopping-cart/shopping-cart.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ShowcaseComponent } from './components/showcase/showcase.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    ShopComponent,
-    ShoppingCartComponent
+    ShowcaseComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
