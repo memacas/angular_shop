@@ -2,7 +2,8 @@ const express = require('express'),
       app = express(),
       port = process.env.PORT || 8080,
       mongoose = require('mongoose'),
-      config_db = require('./config/database');
+      config_db = require('./config/database'),
+      path = require('path');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config_db.uri, (err) => {
@@ -10,8 +11,10 @@ mongoose.connect(config_db.uri, (err) => {
   else console.log('Conectado a Mongo: ' + config_db.db);
 });
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+app.use(express.static(__dirname + '/frontend/dist/'));
+
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname + '/frontend/dist/index.html'));
 });
 
 app.listen(port, function () {
