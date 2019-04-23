@@ -25,17 +25,15 @@ export class ShowcaseComponent implements OnInit {
   }
 
   adicionarProducto(id){
-    const qty = this.form_adicionar.get('qty').value;
-    console.log(qty);
+    const qty = Number(this.form_adicionar.get('qty').value);
+    //console.log(qty);
 
     let prod = this.products.filter(function(product){
                 return product._id.includes(id);
               })
     if (prod.length > 0) prod = prod[0];
-    console.log(prod);
-    console.log(this.prod_service.adicionarProducto(prod));
-
-
+    //console.log(prod);
+    this.prod_service.addProduct(prod, qty);
   }
 
   calcularCampoQTY(maxQTY){

@@ -9,6 +9,7 @@ export class ProdService {
   options;
   servidor_node = this.auth_service.servidor_node;
   carrito = [];
+  qty_carrito = 0;
 
   constructor(
     private auth_service: AuthService,
@@ -17,8 +18,17 @@ export class ProdService {
   ) {
     }
 
-    adicionarProducto(producto){
-      this.carrito.push(producto)
+    getQtyCarrito(){
+      return this.qty_carrito;
+    }
+
+    addProduct(producto, qty){
+      this.carrito.push({product: producto, qty: qty});
+      this.qty_carrito += qty;
+      return this.carrito;
+    }
+
+    getAllCarrito(){
       return this.carrito;
     }
 

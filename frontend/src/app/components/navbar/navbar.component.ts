@@ -12,9 +12,15 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private flash_messages_service: FlashMessagesService
-  ) { }
+    private flash_messages_service: FlashMessagesService,
+    private prod_service: ProdService
+  ) {
 
+  }
+
+  getQtyCarrito(){
+    return this.prod_service.getQtyCarrito();
+  }
 
   onLogoutClick(){
     this.flash_messages_service.show('Cerraste sesión', {cssClass: 'alert-info'});

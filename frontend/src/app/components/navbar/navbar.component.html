@@ -4,8 +4,8 @@
       <a class="navbar-brand" href="#">FruVer.com</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a routerLink="/login"><span class="glyphicon glyphicon-th"></span></a></li>
-      <li><a routerLink="/login"><span class="glyphicon glyphicon-shopping-cart"><span class="badge badge-pill badge-danger">3</span></span></a></li>
+      <li><a routerLink="/showcase"><span class="glyphicon glyphicon-th"></span></a></li>
+      <li><a routerLink="/checkout"><span class="glyphicon glyphicon-shopping-cart"><span *ngIf="getQtyCarrito()" class="badge badge-pill badge-danger">{{ getQtyCarrito() }}</span></span></a></li>
       <li><a routerLink="/login"><span class="glyphicon glyphicon-inbox"></span></a></li>
       <li><a routerLink="/login"><span class="glyphicon glyphicon-log-out"></span></a></li>
 
