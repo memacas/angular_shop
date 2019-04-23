@@ -6,7 +6,9 @@ const express = require('express'),
       config_db = require('./config/database'), //Configuraciòn de ruta, etc de la base de datos mongo
       path = require('path'),
       authentication = require('./routes/authentication')(router),
-      product = require('./routes/product')(router);
+      product = require('./routes/product')(router),
+      body_parser = require('body-parser'),
+      cors = require('cors');
 
 // Conexión a la base de datos
 mongoose.Promise = global.Promise;
@@ -15,11 +17,20 @@ mongoose.connect(config_db.uri, (err) => {
   else console.log('Conectado a Mongo: ' + config_db.db);
 });
 
+app.use(cors({origin: 'http://localhost:4200'}));
+
+// parse wn www-form-urlencoded
+app.use(body_parser.urlencoded({ extended: false}));
+//parte application/json
+app.use(body_parser.json());
+
 // Provee el directorio estatico del frontend
 app.use(express.static(__dirname + '/frontend/dist/'));
 
 //Solicita autenticación de usuario
 app.use('/authentication', authentication);
+
+app.use('/product', product);
 
 // Conecta el servidor nodejs con Angular2
 app.get('*', function (req, res) {

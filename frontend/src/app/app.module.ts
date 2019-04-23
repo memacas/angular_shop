@@ -10,6 +10,11 @@ import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ShowcaseComponent } from './components/showcase/showcase.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { DetailComponent } from './components/detail/detail.component';
+
+import { AuthService } from './services/auth.service';
+import { ProdService } from './services/prod.service';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,9 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     NavbarComponent,
     LoginComponent,
     ShowcaseComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    FilterPipe,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     AppRoutingModule,
     FlashMessagesModule
   ],
-  providers: [],
+  providers: [AuthService, ProdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

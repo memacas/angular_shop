@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { ProdService } from '../../services/prod.service';
 
 @Component({
   selector: 'app-navbar',

@@ -1,8 +1,6 @@
 <div class="principal">
   <div class="loginContainer text-center">
 
-
-
     <div class="row show-hide-message">
       <div [ngClass]="messageClass">
         {{ message }}
@@ -34,5 +32,12 @@
       <!-- Submit Button -->
       <input [disabled]="!form.valid || processing" class="btn btn-primary" type="submit" value="Ingresar" />
     </form>
+
+    <div class="row show-hide-message">
+      <div [ngClass]="messageClass2">
+        {{ message2 }}
+      </div>
+    </div>
+
   </div>
 </div>

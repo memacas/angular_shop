@@ -5,45 +5,47 @@
       <div class="mainShowcaseContainer">
         <div class="showcaseContainer">
           <div class="row">
-            <div class="col-lg-8">
+            <div class="col-md-9">
               <h1>Catálogo de productos</h1>
             </div>
-            <div class="col-lg-3">
-              <form>
+            <div class="col-md-3">
+              <form [formGroup]="form_buscar">
                 <div class="form-group">
                   <label for="buscar">Qué estás buscando?</label>
                   <div>
-                    <input class="form-control" type="text" name="buscar" formControlName="buscar" />
+                    <input class="form-control" type="text" name="buscar" formControlName="buscar" [(ngModel)]="term" />
                   </div>
                 </div>
               </form>
 
             </div>
           </div>
-          <div class="row overflow-auto lista-productos" style="margin-top:20px">
-            <div class="col-lg-3">
+          <div class="row lista-productos" style="margin-top:20px">
+            <div class="col-md-3" *ngFor="let product of products | filter: term">
               <div class="thumbnail">
-                <img src="../../../assets/images/aguacate.jpg" alt="Lights" style="width:100%">
+                <img src="../../../assets/images/{{ product.nombreFoto }}" alt="Lights" style="max-height:100px">
                 <div class="caption">
-                  <h4>AGUACATE</h4>
+                  <h4>{{ product.nombre }}</h4>
                   <br>
-                  <strong>Precio: </strong>$5
+                  <strong>Precio: </strong>{{ product.precio | currency:'COP' }}
                   <br />
-                  <strong>Unidades disponibles: </strong>10
+                  <strong>Unidades disponibles: </strong>{{ product.stock }}
                   <br />
                 </div>
                 <div class="row">
                   <div class="col-lg-5">
-                    <button type="button" name="button" class="btn btn-info">Ver más</button>
+                    <a [routerLink]="['/detail/', product._id]"><button type="button" name="button" class="btn btn-info">Ver más</button></a>
                   </div>
                   <div class="col-lg-7">
-                    <button type="button" name="button" class="btn btn-warning">Añadir</button>
-                    <select class="form-control" id="sel1" style="width:auto; display: inline">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                    </select>
+                    <form [formGroup]="form_adicionar">
+                      <div class="form-group">
+                        <button type="submit" name="button" class="btn btn-warning" (click)="adicionarProducto(product._id)" >Añadir</button>
+                        <select class="form-control" formControlName="qty" name="qty"  id="sel1" style="width:auto; display: inline">
+                          <option *ngFor="let qty1 of calcularCampoQTY(product.stock)">{{qty1}}</option>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
