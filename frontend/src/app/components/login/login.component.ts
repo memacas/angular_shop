@@ -78,10 +78,11 @@ export class LoginComponent implements OnInit {
       else this.messageClass = 'alert alert-success';
     })
 
-    this.prod_service.createProducts().subscribe(data => {
-      this.message2 = data.message;
-      if (!data.success) this.messageClass = 'alert alert-danger';
-      else this.messageClass = 'alert alert-success';
+    this.prod_service.createManyProducts().subscribe(data => {
+      //console.log(data);
+      //this.message2 = data.message;
+      //if (!data.success) this.messageClass = 'alert alert-danger';
+      //else this.messageClass = 'alert alert-success';
     })
   }
 }

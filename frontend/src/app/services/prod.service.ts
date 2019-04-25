@@ -32,6 +32,14 @@ export class ProdService {
       return this.carrito;
     }
 
+    finalizarCompra(carrito){
+      return this.http.post(this.servidor_node + '/product/finalizarCompra', carrito, this.options).map(res => res.json());
+    }
+
+    createManyProducts(){
+      return this.http.get(this.servidor_node + '/authentication/createManyProducts', this.options).map(res => res.json());
+    }
+
     createProducts(){
       return this.http.get(this.servidor_node + '/authentication/createProducts', this.options).map(res => res.json());
     }

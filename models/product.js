@@ -8,6 +8,8 @@ const Schema = mongoose.Schema,
       stock: { type: Number, default: 0 },
       precio: { type: Number, default: 0 },
       createdAt: { type: Date, default: Date.now() }
-      });
+    },{
+    versionKey: false // You should be aware of the outcome after set to false
+});
 
 module.exports = mongoose.model('Product', productSchema);

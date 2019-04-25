@@ -40,7 +40,7 @@
               <br>
               <div>
                 <a [routerLink]="['/showcase']"><button type="button" name="button" class="btn btn-default">Cancelar</button></a>
-                <a [routerLink]="['/showcase']"><button type="button" name="button" class="btn btn-default">Pagar</button></a>
+                <a (click) = "finalizarCompra()"><button type="button" name="button" class="btn btn-default">Pagar</button></a>
               </div>
             </div>
 
